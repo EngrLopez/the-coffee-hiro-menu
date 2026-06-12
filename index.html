@@ -46,12 +46,8 @@
   .front::before{ content:""; position:absolute; left:0;top:0;bottom:0; width:30px;
     background:linear-gradient(90deg, rgba(50,30,18,.20), transparent); z-index:6; pointer-events:none; }
   .back{ transform:rotateY(180deg); background:
-      repeating-linear-gradient(45deg, #4d3022 0 14px, #523424 14px 28px);
-    display:flex; align-items:center; justify-content:center; }
-  .back .seal{ width:108px;height:108px;border:2px solid rgba(247,236,220,.6); border-radius:50%;
-    display:flex;flex-direction:column;align-items:center;justify-content:center; color:var(--cream); text-align:center; }
-  .back .seal b{ font-size:24px; font-weight:700; letter-spacing:2px; line-height:1; }
-  .back .seal span{ font-size:8px; letter-spacing:2px; margin-top:5px; opacity:.8; }
+      repeating-linear-gradient(90deg, rgba(120,90,60,.018) 0 2px, transparent 2px 4px),
+      linear-gradient(160deg, var(--paper), #ecdfca); }
 
   .pad{ position:absolute; inset:14px; padding:16px 16px 40px; overflow-y:auto; }
   .pad::-webkit-scrollbar{width:5px;} .pad::-webkit-scrollbar-thumb{background:rgba(82,52,36,.25);border-radius:4px;}
@@ -179,7 +175,7 @@ function frontInner(p){
 PAGES.forEach((p,i)=>{
   const el=document.createElement('div'); el.className='page'; el.dataset.i=i;
   el.innerHTML=`<div class="face front">${frontInner(p)}</div>
-    <div class="face back"><div class="seal"><b>HIRO</b><span>THE COFFEE HIRO</span></div></div>`;
+    <div class="face back"></div>`;
   book.appendChild(el);
 });
 const pageEls=[...book.querySelectorAll('.page')]; let cur=0;
