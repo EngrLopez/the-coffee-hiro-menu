@@ -24,7 +24,7 @@
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     height:100dvh; padding:8px;
   }
-  .stage{ position:relative; perspective:2400px; width:min(94vw,440px); }
+  .stage{ position:relative; perspective:2400px; width:min(94vw, 440px, calc((100dvh - 132px) / 1.45)); }
   .book{ position:relative; width:100%; aspect-ratio:1/1.45; transform-style:preserve-3d; }
   .page{
     position:absolute; inset:0; transform-origin:left center; transform-style:preserve-3d;
@@ -49,21 +49,21 @@
       repeating-linear-gradient(90deg, rgba(120,90,60,.018) 0 2px, transparent 2px 4px),
       linear-gradient(160deg, var(--paper), #ecdfca); }
 
-  .pad{ position:absolute; inset:14px; padding:16px 16px 40px; overflow-y:auto; }
+  .pad{ position:absolute; inset:12px; padding:14px 15px 26px; overflow-y:auto; -webkit-overflow-scrolling:touch; box-shadow:inset 0 -22px 16px -16px rgba(82,52,36,.16); }
   .pad::-webkit-scrollbar{width:5px;} .pad::-webkit-scrollbar-thumb{background:rgba(82,52,36,.25);border-radius:4px;}
 
-  .phead{ text-align:center; margin:2px 0 8px; }
-  .phead h2{ font-size:21px; font-weight:700; color:var(--brown); letter-spacing:1px; text-transform:uppercase; }
+  .phead{ text-align:center; margin:0 0 6px; }
+  .phead h2{ font-size:19px; font-weight:700; color:var(--brown); letter-spacing:.8px; text-transform:uppercase; }
   .phead .rule{ display:flex; align-items:center; justify-content:center; gap:8px; margin-top:7px; }
   .phead .rule span{ height:1px; width:46px; background:var(--rule); }
   .phead .rule b{ width:6px; height:6px; border-radius:50%; background:var(--accent); transform:rotate(45deg); }
   .pnote{ text-align:center; font-size:11.5px; font-style:italic; color:var(--muted); margin:6px 6px 4px; }
 
-  .hero{ text-align:center; margin:6px 0 10px; line-height:0; }
-  .hero img{ height:86px; width:auto; margin:0 6px; vertical-align:bottom;
-    filter:drop-shadow(0 7px 7px rgba(50,30,18,.22)); }
+  .hero{ text-align:center; margin:4px 0 7px; line-height:0; }
+  .hero img{ height:68px; width:auto; margin:0 5px; vertical-align:bottom;
+    filter:drop-shadow(0 6px 6px rgba(50,30,18,.22)); }
 
-  .item{ padding:8px 2px; }
+  .item{ padding:6px 2px; }
   .irow{ display:flex; align-items:flex-end; gap:6px; }
   .iname{ font-weight:700; font-size:14px; color:var(--ink); letter-spacing:.4px; }
   .leader{ flex:1 1 auto; border-bottom:2px dotted rgba(82,52,36,.32); transform:translateY(-5px); min-width:14px; }
